@@ -23,8 +23,10 @@ program
 
 program
     .command('hi <name>')
+    .description('Say hi in console')
     .action(name => {
-        console.log('Hi ' + name)
+        console.log('Hi ' + name + '❤️💕😁');
+        process.exit();
     })
 
 // program.parse(process.argv);
