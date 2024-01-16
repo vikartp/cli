@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 // Customer Schema
 const customerSchema = mongoose.Schema({
     firstname: { type: String },
@@ -10,8 +9,8 @@ const customerSchema = mongoose.Schema({
 
 /**
  * Create a Mongoose model based on the Customer schema
- * First argument is going to be collection name with Caps and one 's' appended.
- * Here collection will be 'customer'
+ * First argument is going to be collection name(lowercase) and one 's' appended.
+ * Here collection will be 'customers'
  */
 const customer = mongoose.model('Customer', customerSchema);
 
