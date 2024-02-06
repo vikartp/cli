@@ -32,17 +32,27 @@ const questions = [
 
 program
     .version('1.0.0')
-    .description('Client Management System')
+    .description('Customer CRUD Tool')
+
+// Hi Command
+program
+    .command('hi <name>')
+    .description('Say hi in console')
+    .action(name => {
+        console.log(`Hi ${name}, You are awesome 🙏😅😁`);
+        process.exit();
+    })
+
 /**
  * Using just 'commander.js' for cusstomer input in one line
  */
-// program
-//     .command('add <firstname> <lastname> <phone> <email>')
-//     .alias('a')
-//     .description('Add a customer')
-//     .action((firstname, lastname, phone, email) => {
-//         addCustomer({ firstname, lastname, phone, email });
-//     })
+program
+    .command('addInOneLine <firstname> <lastname> <phone> <email>')
+    .alias('aiol')
+    .description('Add a customer')
+    .action((firstname, lastname, phone, email) => {
+        Operations.addCustomer({ firstname, lastname, phone, email });
+    })
 
 
 /**
@@ -95,15 +105,6 @@ program
     .description('List all customers')
     .action(() => {
         Operations.listCustomer();
-    })
-
-// Hi Command
-program
-    .command('hi <name>')
-    .description('Say hi in console')
-    .action(name => {
-        console.log('Hi ' + name + '❤️💕😁');
-        process.exit();
     })
 
 // program.parse(process.argv); // might be required
