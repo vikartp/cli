@@ -1,7 +1,7 @@
 {
   "name": "crud-cli",
   "version": "1.0.0",
-  "description": "Customer management cli with all CRUD operation supported",
+  "description": "CLI with all CRUD operation",
   "main": "index.js",
   "type": "module",
   "preferGlobal": true,
