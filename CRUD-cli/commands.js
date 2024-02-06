@@ -5,6 +5,8 @@
 import { program } from 'commander';
 import inquirer from 'inquirer';
 import * as Operations from './index.cjs';
+import { createFiles } from './createFiles.cjs';
+
 // Customer Questions
 
 const questions = [
@@ -40,6 +42,17 @@ program
     .description('Say hi in console')
     .action(name => {
         console.log(`Hi ${name}, You are awesome 🙏😅😁`);
+        // console.log(process.argv);
+        process.exit();
+    })
+
+// Create files
+program
+    .command('createFiles <source>')
+    .alias('cf')
+    .description('Create files for a specific source')
+    .action(source => {
+        createFiles(source);
         process.exit();
     })
 
